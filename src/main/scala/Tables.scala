@@ -27,13 +27,19 @@ object Tables {
 
 
     //spark.sql("create table BevBranA(nameDrinkBran String, branchNum String) row format delimited fields terminated by ','");
-   // spark.sql("LOAD DATA LOCAL INPATH 'input/Bev_BranchA.txt' INTO TABLE BevBranA")
+    // spark.sql("LOAD DATA LOCAL INPATH 'input/Bev_BranchA.txt' INTO TABLE BevBranA")
     //spark.sql("create table BevBranB(nameDrinkBran String, branchNum String) row format delimited fields terminated by ','");
     //spark.sql("LOAD DATA LOCAL INPATH 'input/Bev_BranchB.txt' INTO TABLE BevBranB")
     //spark.sql("create table BevBranC(nameDrinkBran String, branchNum String) row format delimited fields terminated by ','");
     //spark.sql("LOAD DATA LOCAL INPATH 'input/Bev_BranchC.txt' INTO TABLE BevBranC")
 
+    //THIS CODE CREATES A TABLE THAT SHOWS HOW MANY TIMES A DRINK APPEARS IN BRANCHA DOCUMENT
     //spark.sql("CREATE TABLE CtDrAppearanceBevA (count int, nameDrink String) row format delimited fields terminated by ','");
     //spark.sql("LOAD DATA LOCAL INPATH 'input/CountDrinkAppearanceBevA.txt' INTO TABLE CtDrAppearanceBevA")
+
+   // spark.sql("create table drinkDistributionA2 (total int, AS (SELECT SUM(count), nameDrinkBran FROM (SELECT DISTINCT nameDrinkBran, count FROM BevBranA LEFT JOIN BevConsA ON (BevConsA.nameDrinkCon=BevBranA.nameDrinkBran) WHERE branchNum='Branch1' ORDER BY nameDrinkBran ASC) GROUP BY nameDrinkBran")
+    //spark.sql("create table drinkDistributionAB (total int, AS (SELECT SUM(count), nameDrinkBran FROM (SELECT DISTINCT nameDrinkBran, count FROM BevBranA LEFT JOIN BevConsB ON (BevConsB.nameDrinkCon=BevBranA.nameDrinkBran) WHERE branchNum='Branch1' ORDER BY nameDrinkBran ASC) GROUP BY nameDrinkBran").show()
+
   }
+
 }
