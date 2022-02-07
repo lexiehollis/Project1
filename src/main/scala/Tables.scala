@@ -32,5 +32,8 @@ object Tables {
     //spark.sql("LOAD DATA LOCAL INPATH 'input/Bev_BranchB.txt' INTO TABLE BevBranB")
     //spark.sql("create table BevBranC(nameDrinkBran String, branchNum String) row format delimited fields terminated by ','");
     //spark.sql("LOAD DATA LOCAL INPATH 'input/Bev_BranchC.txt' INTO TABLE BevBranC")
+
+    //spark.sql("CREATE TABLE CtDrAppearanceBevA (count int, nameDrink String) row format delimited fields terminated by ','");
+    //spark.sql("LOAD DATA LOCAL INPATH 'input/CountDrinkAppearanceBevA.txt' INTO TABLE CtDrAppearanceBevA")
   }
 }
