@@ -1,14 +1,11 @@
-
 3,Special_cappuccino
 3,LARGE_cappuccino
-
 2,LARGE_Espresso
 2,Triple_LATTE
 2,MED_MOCHA
 2,ICY_MOCHA
 2,Mild_LATTE
 2,Special_Coffee
-
 2,Double_Espresso
 2,MED_LATTE
 2,Triple_MOCHA
@@ -17,7 +14,6 @@
 2,Special_Espresso
 2,Mild_Lite
 2,SMALL_LATTE
-
 1,ICY_Espresso
 1,Double_MOCHA
 1,Cold_LATTE

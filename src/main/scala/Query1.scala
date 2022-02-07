@@ -14,7 +14,8 @@ import org.apache.spark.sql.SparkSession
       println("created spark session")
 
 
-
-      //spark.sql("SELECT SUM(count) FROM BevConsA JOIN BevBranA on(nameDrinkCon=nameDrinkBran) WHERE branchNum='Branch1'");
+      spark.sql(
+        "SELECT SUM(result) AS TotalConsumersBranch1 FROM " +
+          "(SELECT drinkDistributionA2.total/CtDrAppearanceBevA.count AS Result FROM drinkDistributionA2 FULL OUTER JOIN CtDrAppearanceBevA ON (nameDrinkBran=nameDrink))").show()
     }
   }
