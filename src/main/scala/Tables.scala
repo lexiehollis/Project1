@@ -37,9 +37,15 @@ object Tables {
     //spark.sql("CREATE TABLE CtDrAppearanceBevA (count int, nameDrink String) row format delimited fields terminated by ','");
     //spark.sql("LOAD DATA LOCAL INPATH 'input/CountDrinkAppearanceBevA.txt' INTO TABLE CtDrAppearanceBevA")
 
-   // spark.sql("create table drinkDistributionA2 (total int, AS (SELECT SUM(count), nameDrinkBran FROM (SELECT DISTINCT nameDrinkBran, count FROM BevBranA LEFT JOIN BevConsA ON (BevConsA.nameDrinkCon=BevBranA.nameDrinkBran) WHERE branchNum='Branch1' ORDER BY nameDrinkBran ASC) GROUP BY nameDrinkBran")
-    //spark.sql("create table drinkDistributionAB (total int, AS (SELECT SUM(count), nameDrinkBran FROM (SELECT DISTINCT nameDrinkBran, count FROM BevBranA LEFT JOIN BevConsB ON (BevConsB.nameDrinkCon=BevBranA.nameDrinkBran) WHERE branchNum='Branch1' ORDER BY nameDrinkBran ASC) GROUP BY nameDrinkBran").show()
+//THIS CODE CREATES A TABLE THAT HAS TOTAL SUMS BY DRINK; I USE THE CtDrAppearance table to distributed those totals among branches
+    //spark.sql("Create table drinkdistribution3 (total int, nameDrinkBran String)");
+    //spark.sql("Create table drinkdistribution4 (total int, nameDrinkBran String)");
+    //spark.sql("INSERT INTO drinkdistribution4 SELECT SUM(count), nameDrinkBran FROM (SELECT DISTINCT nameDrinkBran, count FROM BevBranA LEFT JOIN BevConsC ON (BevConsC.nameDrinkCon=BevBranA.nameDrinkBran) WHERE branchNum='Branch1' ORDER BY nameDrinkBran ASC) GROUP BY nameDrinkBran")
 
+
+    //spark.sql("Create table drinkdistribution3 (total int, nameDrinkBran String)");
+    //spark.sql("Create table drinkdistribution4 (total int, nameDrinkBran String)");
+   // spark.sql("SELECT * FROM drinkdistribution3").show()
   }
 
 }

@@ -50,7 +50,7 @@ object Test {
     //although the code specifies totals for Branch1 it really returns totals for ALL branches; if delete the group by at the
     //end or try to change it to ORDER BY I get an error
 
-    //spark.sql("SELECT SUM(count), nameDrinkBran FROM (SELECT DISTINCT nameDrinkBran, count FROM BevBranA LEFT JOIN BevConsA ON (BevConsA.nameDrinkCon=BevBranA.nameDrinkBran) WHERE branchNum='Branch1' ORDER BY nameDrinkBran ASC) GROUP BY nameDrinkBran").show(30)
+    spark.sql("SELECT SUM(count), nameDrinkBran FROM (SELECT DISTINCT nameDrinkBran, count FROM BevBranA LEFT JOIN BevConsA ON (BevConsA.nameDrinkCon=BevBranA.nameDrinkBran) WHERE branchNum='Branch1' ORDER BY nameDrinkBran ASC) GROUP BY nameDrinkBran").show(30)
 
 
 //OTHER CODE
@@ -62,7 +62,7 @@ object Test {
     //THIS TABLE SHOWS TOTAL count of drinks from ConsA for each distinct drink BranA; CODE FOR CREATING IT IS BELOW
     //spark.sql("SELECT * FROM drinkDistributionA2").show()
 
-    //spark.sql("create table drinkDistributionA2 (total int AS (SELECT SUM(count)), nameDrinkBran FROM (SELECT DISTINCT nameDrinkBran, count FROM BevBranA LEFT JOIN BevConsA ON (BevConsA.nameDrinkCon=BevBranA.nameDrinkBran) WHERE branchNum='Branch1' ORDER BY nameDrinkBran ASC) GROUP BY nameDrinkBran)")
+    //spark.sql("create table drinkDistributionA2 (total int, AS (SELECT SUM(count), nameDrinkBran FROM (SELECT DISTINCT nameDrinkBran, count FROM BevBranA LEFT JOIN BevConsA ON (BevConsA.nameDrinkCon=BevBranA.nameDrinkBran) WHERE branchNum='Branch1' ORDER BY nameDrinkBran ASC) GROUP BY nameDrinkBran)")
   }
 
     //spark.sql("SELECT DISTINCT nameDrinkBran, branchNum, count FROM BevBranA LEFT JOIN BevConsB ON (BevConsB.nameDrinkCon=BevBranA.nameDrinkBran) WHERE branchNum='Branch1' ORDER BY nameDrinkBran ASC").show(500)
