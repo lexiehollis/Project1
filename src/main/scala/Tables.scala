@@ -45,7 +45,7 @@ object Tables {
 
     //spark.sql("Create table drinkdistribution3 (total int, nameDrinkBran String)");
     //spark.sql("Create table drinkdistribution4 (total int, nameDrinkBran String)");
-   // spark.sql("SELECT * FROM drinkdistribution3").show()
+   spark.sql("SELECT * FROM drinkdistribution4").show()
   }
 
 }
