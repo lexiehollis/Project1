@@ -14,10 +14,10 @@
       //spark.sql("SELECT 2DDAA.total/CtDrAppearanceBevA2.count AS Result FROM " +
       //"2DDAA FULL OUTER JOIN CtDrAppearanceBevA2 ON (nameDrinkBran=nameDrink)").show()
 
-      //spark.sql(
-      //"SELECT SUM(result) AS TotalConsumersBranch2ACA FROM " +
-      //"(SELECT 2DDAA.total/CtDrAppearanceBevA2.count AS Result FROM " +
-      //"2DDAA FULL OUTER JOIN CtDrAppearanceBevA2 ON (nameDrinkBran=nameDrink))").show()
+      spark.sql(
+      "SELECT SUM(result) AS TotalConsumersBranch2ACA FROM " +
+      "(SELECT 2DDAA.total/CtDrAppearanceBevA2.count AS Result FROM " +
+      "2DDAA FULL OUTER JOIN CtDrAppearanceBevA2 ON (nameDrinkBran=nameDrink))").show()
       //____________________________________________
 
       //spark.sql("SELECT SUM(count), nameDrinkBran FROM " +

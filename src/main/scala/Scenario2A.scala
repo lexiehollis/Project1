@@ -1,18 +1,8 @@
 import org.apache.spark.sql.SparkSession
 
 object Scenario2A {
-  def main(args: Array[String]): Unit = {
-    //create a spark session
-    // for Windows
-    System.setProperty("hadoop.home.dir", "C:\\winutils")
 
-    val spark = SparkSession.builder()
-      .appName("Scenario2A")
-      .config("spark.master", "local")
-      .enableHiveSupport()
-      .getOrCreate()
-    //println("created spark session")
-
+  def scenario2a(spark: SparkSession): Unit = {
 
     println("PRINT the most consumed beverage on Branch1 is ")
     spark.sql("SELECT nameDrinkBran, count from Branch1DrTotalC ORDER BY count DESC LIMIT 1").show()

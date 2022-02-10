@@ -1,6 +1,6 @@
 import org.apache.spark.sql.SparkSession
 
-class Main {
+object Main {
 
   val spark = SparkSession.builder()
     .appName("Scenario1A")
@@ -18,10 +18,40 @@ class Main {
     val selection = readInt()
 
     selection match {
-      case 1 =>{
+      case 1 => {
         Scenario1A.scenario1a(spark)
       }
-    }
+      case 2 => {
+        Scenario1B.scenario1b(spark)
+      }
+      case 3 => {
+        Scenario2A.scenario2a(spark)
+      }
+      case 4 => {
+        Scenario2B.scenario2b(spark)
+      }
+      case 5 => {
+        Scenario2C.scenario2c(spark)
+      }
+      case 6 => {
+        Scenario3A.scenario3a(spark)
+      }
+      case 7 => {
+        Scenario3B.scenario3b(spark)
+      }
+      case 8 => {
+        Scenario4.scenario4(spark)
+      }
+      case 9 => {
+        Scenario5.scenario5(spark)
+      }
+      case 10 => {
+        Tables.tabletest(spark)
+      }
 
+    }
   }
 }
+
+
+

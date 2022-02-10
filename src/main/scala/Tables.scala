@@ -5,13 +5,26 @@ object Tables {
 
     def tabletest (spark: SparkSession): Unit = {
 
-    //spark.sql("DROP TABLE BevBranA")
+    //spark.sql("DROP TABLE consumers")
     //spark.sql("DROP TABLE BevBranB")
     //spark.sql("DROP TABLE BevBranC")
     //spark.sql("DROP TABLE CtDrAppearanceBevc2")
 
+     //spark.sql("create table branches(nameDrinkBran String, branchNum int) row format delimited fields terminated by ','");
+     // spark.sql("LOAD DATA LOCAL INPATH 'input/Bev_BranchA.txt' INTO TABLE branches")
+    //  spark.sql("LOAD DATA LOCAL INPATH 'input/Bev_BranchB.txt' INTO TABLE branches")
+     // spark.sql("LOAD DATA LOCAL INPATH 'input/Bev_BranchC.txt' INTO TABLE branches")
+     // spark.sql("SELECT * FROM branches").show(300)
 
-    //spark.sql("create table BevConsA(nameDrinkCon String, count int) row format delimited fields terminated by ','");
+
+
+      //spark.sql("create table consumers(nameDrinkCon String, count int) row format delimited fields terminated by ','");
+      //spark.sql("LOAD DATA LOCAL INPATH 'input/Bev_ConscountA.txt' INTO TABLE consumers")
+     //spark.sql("LOAD DATA LOCAL INPATH 'input/Bev_ConscountB.txt' INTO TABLE consumers")
+     // spark.sql("LOAD DATA LOCAL INPATH 'input/Bev_ConscountC.txt' INTO TABLE consumers")
+
+
+      //spark.sql("create table BevConsA(nameDrinkCon String, count int) row format delimited fields terminated by ','");
     //spark.sql("LOAD DATA LOCAL INPATH 'input/Bev_ConscountA.txt' INTO TABLE BevConsA")
     //spark.sql("create table BevConsB(nameDrinkCon String, count int) row format delimited fields terminated by ','");
     //spark.sql("LOAD DATA LOCAL INPATH 'input/Bev_ConscountB.txt' INTO TABLE BevConsB")
