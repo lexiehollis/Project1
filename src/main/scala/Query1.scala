@@ -16,10 +16,10 @@ import org.apache.spark.sql.SparkSession
 
       spark.sql("SELECT SUM(count), nameDrinkBran FROM " +
       "(SELECT DISTINCT nameDrinkBran, count FROM BevBranA LEFT JOIN BevConsA ON (BevConsA.nameDrinkCon=BevBranA.nameDrinkBran) WHERE " +
-      "branchNum='Branch1' ORDER BY nameDrinkBran ASC) GROUP BY nameDrinkBran")
+      "branchNum='Branch1' ORDER BY nameDrinkBran ASC) GROUP BY nameDrinkBran").show()
 
       spark.sql("SELECT drinkDistributionA2.total/CtDrAppearanceBevA.count AS Result FROM " +
-     "drinkDistributionA2 FULL OUTER JOIN CtDrAppearanceBevA ON (nameDrinkBran=nameDrink)")
+     "drinkDistributionA2 FULL OUTER JOIN CtDrAppearanceBevA ON (nameDrinkBran=nameDrink)").show()
 
       spark.sql(
       "SELECT SUM(result) AS TotalConsumersBranch1CA FROM " +

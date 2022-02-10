@@ -37,11 +37,21 @@ object Test {
     //This code shows how many times a drink appears in BevBranA; indicates how many times a drink is offered,
     //so I can distribute total counts from ConsA among branches(NOT EXACT, ACCURATE MATH, but the best I can do with
     //this data
-    //spark.sql("SELECT * FROM (SELECT nameDrinkBran, COUNT(*) FROM BevBranA GROUP BY nameDrinkBran ORDER BY COUNT(*) ASC) ").show()
 
-    //MISC search code
-    //spark.sql("SELECT nameDrinkCon, count FROM BevConsA WHERE nameDrinkCon='Cold_Coffee'").show()
-    //spark.sql("SELECT DISTINCT nameDrinkBran from BevBranA WHERE branchNum='Branch1' ORDER BY nameDrinkBran ASC").show(100)
+
+
+
+
+
+
+
+    //THIS CODE SHOWS THE DISTINCT DRINKS IN BRANCH2 BEVA
+    //spark.sql("SELECT DISTINCT nameDrinkBran from BevBranA WHERE branchNum='Branch2' ORDER BY nameDrinkBran ASC").show(100)
+
+    //THIS CODE SHOWS THE DISTINCT DRINKS IN BRANCH2 BEVC
+    //spark.sql("SELECT DISTINCT nameDrinkBran from BevBranC WHERE branchNum='Branch2' ORDER BY nameDrinkBran ASC").show(100)
+
+
     //spark.Sql("SELECT branchNum, SUM(count) AS BranchTotal FROM [tablename] GROUP BY branchNum"
 
     //THIS IS THE CODE I NEED TO WORK WITH
@@ -50,7 +60,7 @@ object Test {
     //although the code specifies totals for Branch1 it really returns totals for ALL branches; if delete the group by at the
     //end or try to change it to ORDER BY I get an error
 
-    spark.sql("SELECT SUM(count), nameDrinkBran FROM (SELECT DISTINCT nameDrinkBran, count FROM BevBranA LEFT JOIN BevConsA ON (BevConsA.nameDrinkCon=BevBranA.nameDrinkBran) WHERE branchNum='Branch1' ORDER BY nameDrinkBran ASC) GROUP BY nameDrinkBran").show(30)
+    //spark.sql("SELECT SUM(count), nameDrinkBran FROM (SELECT DISTINCT nameDrinkBran, count FROM BevBranA LEFT JOIN BevConsA ON (BevConsA.nameDrinkCon=BevBranA.nameDrinkBran) WHERE branchNum='Branch1' ORDER BY nameDrinkBran ASC) GROUP BY nameDrinkBran").show(30)
 
 
 //OTHER CODE
