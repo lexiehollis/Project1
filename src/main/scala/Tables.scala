@@ -2,17 +2,8 @@
 import org.apache.spark.sql.SparkSession
 
 object Tables {
-  def main(args: Array[String]): Unit = {
-    // create a spark session
-    // for Windows
-    System.setProperty("hadoop.home.dir", "C:\\winutils")
 
-    val spark = SparkSession.builder()
-      .appName("Tables")
-      .config("spark.master", "local")
-      .enableHiveSupport()
-      .getOrCreate()
-    println("created spark session")
+    def tabletest (spark: SparkSession): Unit = {
 
     //spark.sql("DROP TABLE BevBranA")
     //spark.sql("DROP TABLE BevBranB")

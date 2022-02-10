@@ -2,17 +2,8 @@
 import org.apache.spark.sql.SparkSession
 
 object newtests {
-  def main(args: Array[String]): Unit = {
-    // create a spark session
-    // for Windows
-    System.setProperty("hadoop.home.dir", "C:\\winutils")
 
-    val spark = SparkSession.builder()
-      .appName("newtests")
-      .config("spark.master", "local")
-      .enableHiveSupport()
-      .getOrCreate()
-    println("created spark session")
+    def test (spark: SparkSession): Unit = {
 
     //Distinct drinkNames in BevBranA and BevABranC (54 each)
     //spark.sql("SELECT DISTINCT nameDrinkBran FROM BevBranA ORDER BY nameDrinkBran ASC").show(60)
