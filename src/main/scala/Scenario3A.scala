@@ -14,9 +14,9 @@ object Scenario3A {
 
     println("These are the beverages available in Branch 10")
 
-    spark.sql("SELECT nameDrinkBran FROM branches WHERE branchNum='branch10' ORDER BY nameDrinkBran").show()
+    spark.sql("SELECT nameDrinkBran FROM branches WHERE branchNum='branch10' ORDER BY nameDrinkBran").show(54)
 
-    spark.sql("SELECT DISTINCT nameDrinkBran  FROM WHERE branchNum='branch10' ORDER BY nameDrinkBran ASC").show(54)
+
 
 
 
