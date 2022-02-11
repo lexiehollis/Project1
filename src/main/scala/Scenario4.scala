@@ -13,6 +13,8 @@ object Scenario4 {
     //spark.sql("SELECT * FROM CBs").show()
 
    // spark.sql("Create table CommonBeverages (nameDrinkBran String) PARTITIONED BY (branchNum String) row format delimited fields terminated by ','")
-   spark.sql("INSERT into CommonBeverages ").show()
+  // spark.sql("LOAD DATA LOCAL INPATH 'input/Bev_BranchA.txt' INTO TABLE CommonBeverages")
+     //spark.sql("LOAD DATA LOCAL INPATH 'input/Bev_BranchB.txt' INTO TABLE CommonBeverages")
+    //spark.sql("LOAD DATA LOCAL INPATH 'input/Bev_BranchC.txt' INTO TABLE CommonBeverages")
   }
 }

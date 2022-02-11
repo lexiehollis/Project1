@@ -14,7 +14,22 @@ object Main {
     // for Windows
     System.setProperty("hadoop.home.dir", "C:\\winutils")
 
-    println("Enter a number to select a scenario")
+    //println("Enter a number below to select a scenario." +
+      "1. Scenario1a" +
+      "2. Scenario1b" +
+      "3. Scenario2a" +
+      "4. Scenario2b" +
+      "5. Scenario3a" +
+      "6. Scenario3b" +
+      "7. Scenario3c" +
+      "8. Scenario4" +
+      "9. Scenario5" +
+      "10 Scenario6" +
+      "11. Quit"
+
+    //)
+
+    println("Enter a Number")
     val selection = readInt()
 
     selection match {
@@ -46,6 +61,9 @@ object Main {
         Scenario5.scenario5(spark)
       }
       case 10 => {
+        Scenario6.scenario6(spark)
+      }
+      case 11 => {
         Tables.tabletest(spark)
       }
 

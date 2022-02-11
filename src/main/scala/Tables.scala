@@ -8,7 +8,7 @@ object Tables {
     //spark.sql("DROP TABLE consumers")
     //spark.sql("DROP TABLE branches")
     //spark.sql("DROP TABLE BevBranC")
-    //spark.sql("DROP TABLE branches")
+    spark.sql("DROP TABLE branches")
      // spark.sql("SELECT * FROM branches").show()
 
      //spark.sql("create table branches(nameDrinkBran String, branchNum String) row format delimited fields terminated by ','");
