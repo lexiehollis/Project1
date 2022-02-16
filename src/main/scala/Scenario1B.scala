@@ -5,7 +5,9 @@
 
     def scenario1b(spark: SparkSession): Unit = {
 
-
+    println("This is the number of consumers in for Branch2: ")
+    spark.sql("SELECT sum(count) AS Branch2totalConsumers from branches JOIN consumers ON (branches.nameDrinkBran=consumers.nameDrinkCon) WHERE " +
+      "branchNum='Branch2'").show()
 
       //spark.sql("SELECT SUM(count), nameDrinkBran FROM " +
       //"(SELECT DISTINCT nameDrinkBran, count FROM BevBranA LEFT JOIN BevConsA ON (BevConsA.nameDrinkCon=BevBranA.nameDrinkBran) WHERE " +
@@ -14,10 +16,10 @@
       //spark.sql("SELECT 2DDAA.total/CtDrAppearanceBevA2.count AS Result FROM " +
       //"2DDAA FULL OUTER JOIN CtDrAppearanceBevA2 ON (nameDrinkBran=nameDrink)").show()
 
-      spark.sql(
-      "SELECT SUM(result) AS TotalConsumersBranch2ACA FROM " +
-      "(SELECT 2DDAA.total/CtDrAppearanceBevA2.count AS Result FROM " +
-      "2DDAA FULL OUTER JOIN CtDrAppearanceBevA2 ON (nameDrinkBran=nameDrink))").show()
+      //spark.sql(
+      //"SELECT SUM(result) AS TotalConsumersBranch2ACA FROM " +
+      //"(SELECT 2DDAA.total/CtDrAppearanceBevA2.count AS Result FROM " +
+      //"2DDAA FULL OUTER JOIN CtDrAppearanceBevA2 ON (nameDrinkBran=nameDrink))").show()
       //____________________________________________
 
       //spark.sql("SELECT SUM(count), nameDrinkBran FROM " +
@@ -81,10 +83,10 @@
       //spark.sql("SELECT 2DDCC.total/CtDrAppearanceBevC2.count AS Result FROM " +
       //"2DDCC FULL OUTER JOIN CtDrAppearanceBevC2 ON (nameDrinkBran=nameDrink)").show()
 
-      spark.sql(
-        "SELECT SUM(result) AS TotalConsumersBranch2CCC FROM " +
-          "(SELECT 2DDCC.total/CtDrAppearanceBevC2.count AS Result FROM " +
-          "2DDCC FULL OUTER JOIN CtDrAppearanceBevC2 ON (nameDrinkBran=nameDrink))").show()
+      //spark.sql(
+        //"SELECT SUM(result) AS TotalConsumersBranch2CCC FROM " +
+        //  "(SELECT 2DDCC.total/CtDrAppearanceBevC2.count AS Result FROM " +
+         // "2DDCC FULL OUTER JOIN CtDrAppearanceBevC2 ON (nameDrinkBran=nameDrink))").show()
 
 
 

@@ -34,7 +34,7 @@
     <orderEntry type="library" name="sbt: com.google.flatbuffers:flatbuffers-java:1.9.0:jar" level="project" />
     <orderEntry type="library" name="sbt: com.google.guava:guava:16.0.1:jar" level="project" />
     <orderEntry type="library" name="sbt: com.google.inject:guice:4.0:jar" level="project" />
-    <orderEntry type="library" name="sbt: com.google.protobuf:protobuf-java:3.11.4:jar" level="project" />
+    <orderEntry type="library" name="sbt: com.google.protobuf:protobuf-java:2.5.0:jar" level="project" />
     <orderEntry type="library" name="sbt: com.google.re2j:re2j:1.1:jar" level="project" />
     <orderEntry type="library" name="sbt: com.jcraft:jsch:0.1.54:jar" level="project" />
     <orderEntry type="library" name="sbt: com.jolbox:bonecp:0.8.0.RELEASE:jar" level="project" />
@@ -90,7 +90,6 @@
     <orderEntry type="library" name="sbt: jline:jline:2.12:jar" level="project" />
     <orderEntry type="library" name="sbt: joda-time:joda-time:2.10.5:jar" level="project" />
     <orderEntry type="library" name="sbt: log4j:log4j:1.2.17:jar" level="project" />
-    <orderEntry type="library" name="sbt: mysql:mysql-connector-java:8.0.25:jar" level="project" />
     <orderEntry type="library" name="sbt: net.minidev:accessors-smart:1.2:jar" level="project" />
     <orderEntry type="library" name="sbt: net.minidev:json-smart:2.3:jar" level="project" />
     <orderEntry type="library" name="sbt: net.razorvine:pyrolite:4.30:jar" level="project" />

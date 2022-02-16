@@ -4,19 +4,21 @@ object Scenario2B {
 
   def scenario2b(spark: SparkSession): Unit = {
 
-    println("PRINT the least beverage on Branch2 is ")
-    spark.sql("SELECT nameDrinkBran, count from Branch2DrTotalCA ORDER BY count ASC LIMIT 1").show()
+    println("The least consumed beverage on Branch2 is ")
+   // spark.sql("SELECT nameDrinkBran, count from Branch2DrTotalCA ORDER BY count ASC LIMIT 1").show()
 
-    spark.sql("SELECT nameDrinkBran, count from Branch2DrTotalAA ORDER BY count ASC LIMIT 1").show()
-    spark.sql("SELECT nameDrinkBran, count from Branch2DrTotalAB ORDER BY count ASC LIMIT 1").show()
-    spark.sql("SELECT nameDrinkBran, count from Branch2DrTotalAC ORDER BY count ASC LIMIT 1").show()
-    spark.sql("SELECT nameDrinkBran, count from Branch2DrTotalCA ORDER BY count ASC LIMIT 1").show()
-    spark.sql("SELECT nameDrinkBran, count from Branch2DrTotalCB ORDER BY count ASC LIMIT 1").show()
-    spark.sql("SELECT nameDrinkBran, count from Branch2DrTotalCC ORDER BY count ASC LIMIT 1").show()
+  //spark.sql("SELECT nameDrinkBran, count from Branch2DrTotalAA ORDER BY count ASC LIMIT 1").show()
+    //spark.sql("SELECT nameDrinkBran, count from Branch2DrTotalAB ORDER BY count ASC LIMIT 1").show()
+  //spark.sql("SELECT nameDrinkBran, count from Branch2DrTotalAC ORDER BY count ASC LIMIT 1").show()
+   //spark.sql("SELECT nameDrinkBran, count from Branch2DrTotalCA ORDER BY count ASC LIMIT 1").show()
+   //spark.sql("SELECT nameDrinkBran, count from Branch2DrTotalCB ORDER BY count ASC LIMIT 1").show()
+  //spark.sql("SELECT nameDrinkBran, count from Branch2DrTotalCC ORDER BY count ASC LIMIT 1").show()
+
+//spark.sql("SELECT * from Branch2DrTotalCC").show(100)
 
 
-
-
+// This code creates tables that show totals of drinks found in Branch2; I join the drinks offered in Branch 2 with
+    //the consumer count lists.
     //spark.sql("Create table Branch2DrTotalAA(count int, nameDrinkBran String) row format delimited fields terminated by ','")
 
    // spark.sql("INSERT into table Branch2DrTotalAA SELECT SUM(count), nameDrinkBran FROM " +
