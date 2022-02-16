@@ -4,10 +4,10 @@ object Scenario6 {
 
   def scenario6(spark: SparkSession): Unit = {
 
-    spark.sql("drop table Milkproducts")
 
-    //spark.sql("Create table MilkAdd (animal string, plant string")
 
+    spark.sql("Create table MilkAdd (Drink string, drinkssold int, animal string, plant string) row format delimited fields terminated by ','");
+    spark.sql("INSERT INTO MilkAdd")
 
    // Spark.sql("INSERT INTO MildSELECT * FROM branches WHERE nameDrinkBran LIKE '%capp%', '%LATTE%', '%MOCHA%'")
 

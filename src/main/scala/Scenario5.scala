@@ -15,8 +15,8 @@ object Scenario5 {
     //spark.sql("ALTER TABLE BevBranA SET TBLPROPERTIES ('note' = 'A quick look at just the beginning of this date " +
    // "indicated that the branch numbers were repeating in consistent pattern')")
 
-    //spark.sql("SHOW TBLPROPERTIES 2DDAA").show(20)
-    //spark.sql("SHOW TBLPROPERTIES BevBranA").show(20)
+    spark.sql("SHOW TBLPROPERTIES 2DDAA").show(20)
+    spark.sql("SHOW TBLPROPERTIES BevBranA").show(20)
 
 
 

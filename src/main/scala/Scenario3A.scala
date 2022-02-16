@@ -6,15 +6,15 @@ object Scenario3A {
 
     println("These are the beverages available in Branch 1 ")
 
-    spark.sql("SELECT DISTINCT nameDrinkBran FROM branches WHERE branchNum='branch1' ORDER BY nameDrinkBran ASC").show(54)
+    spark.sql("SELECT DISTINCT nameDrinkBran FROM branches WHERE branchNum='Branch1' ORDER BY nameDrinkBran ASC").show(54)
 
     println("These are the beverages available in Branch 8")
 
-    spark.sql("SELECT DISTINCT nameDrinkBran FROM branches WHERE branchNum='branch8' ORDER BY nameDrinkBran ASC").show(54)
+    spark.sql("SELECT DISTINCT nameDrinkBran FROM branches WHERE branchNum='Branch8' ORDER BY nameDrinkBran ASC").show(54)
 
     println("These are the beverages available in Branch 10")
 
-    spark.sql("SELECT nameDrinkBran FROM branches WHERE branchNum='branch10' ORDER BY nameDrinkBran").show(54)
+    spark.sql("SELECT nameDrinkBran FROM branches WHERE branchNum='Branch10' ORDER BY nameDrinkBran").show(54)
 
 
 
