@@ -2,30 +2,29 @@ import org.apache.spark.sql.SparkSession
 
 object Main {
 
-
- val spark = SparkSession.builder()
-    .appName("main")
+  val spark = SparkSession.builder()
+    .appName("Scenario1A")
     .config("spark.master", "local")
     .enableHiveSupport()
     .getOrCreate()
-
-  System.setProperty("hadoop.home.dir", "C:\\winutils")
-
   println("created spark session")
 
   def main(args: Array[String]): Unit = {
+    // create a spark session
+    // for Windows
+    System.setProperty("hadoop.home.dir", "C:\\winutils")
 
     //println("Enter a number below to select a scenario." +
-      "1. Scenario1a"
-      "2. Scenario1b"
-      "3. Scenario2a"
-      "4. Scenario2b"
-      "5. Scenario2c"
-      "6. Scenario3a"
-      "7. Scenario3b"
-      "8. Scenario4"
-      "9. Scenario5"
-      "10 Scenario6"
+      "1. Scenario1a" +
+      "2. Scenario1b" +
+      "3. Scenario2a" +
+      "4. Scenario2b" +
+      "5. Scenario3a" +
+      "6. Scenario3b" +
+      "7. Scenario3c" +
+      "8. Scenario4" +
+      "9. Scenario5" +
+      "10 Scenario6" +
       "11. Quit"
 
     //)
@@ -65,7 +64,7 @@ object Main {
         Scenario6.scenario6(spark)
       }
       case 11 => {
-        Quit.quit(spark)
+        Tables.tabletest(spark)
       }
 
     }
