@@ -6,7 +6,6 @@ object Main {
  val spark = SparkSession.builder()
     .appName("main")
     .config("spark.master", "local")
-
     .enableHiveSupport()
     .getOrCreate()
 
@@ -17,16 +16,16 @@ object Main {
   def main(args: Array[String]): Unit = {
 
     //println("Enter a number below to select a scenario." +
-      "1. Scenario1a" +
-      "2. Scenario1b" +
-      "3. Scenario2a" +
-      "4. Scenario2b" +
-      "5. Scenario2c" +
-      "6. Scenario3a" +
-      "7. Scenario3b" +
-      "8. Scenario4" +
-      "9. Scenario5" +
-      "10 Scenario6" +
+      "1. Scenario1a"
+      "2. Scenario1b"
+      "3. Scenario2a"
+      "4. Scenario2b"
+      "5. Scenario2c"
+      "6. Scenario3a"
+      "7. Scenario3b"
+      "8. Scenario4"
+      "9. Scenario5"
+      "10 Scenario6"
       "11. Quit"
 
     //)

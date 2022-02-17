@@ -5,7 +5,9 @@ object Scenario2B {
   def scenario2b(spark: SparkSession): Unit = {
 
     println("The least consumed beverage on Branch2 is ")
-   // spark.sql("SELECT nameDrinkBran, count from Branch2DrTotalCA ORDER BY count ASC LIMIT 1").show()
+
+    //Here I looked at the results from the 6 queries below and identified the lowest.
+   spark.sql("SELECT nameDrinkBran, count from Branch2DrTotalCA ORDER BY count ASC LIMIT 1").show()
 
   //spark.sql("SELECT nameDrinkBran, count from Branch2DrTotalAA ORDER BY count ASC LIMIT 1").show()
     //spark.sql("SELECT nameDrinkBran, count from Branch2DrTotalAB ORDER BY count ASC LIMIT 1").show()

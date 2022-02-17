@@ -5,6 +5,7 @@ object Scenario2A {
   def scenario2a(spark: SparkSession): Unit = {
 
     println("The most consumed beverage on Branch1 is ")
+    //Here I looked at the results from the 3 queries below and identified the highest.
     spark.sql("SELECT nameDrinkBran, count from Branch1DrTotalC ORDER BY count DESC LIMIT 1").show()
 
 

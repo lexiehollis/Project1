@@ -14,12 +14,12 @@ object Scenario5 {
 
     //spark.sql("ALTER TABLE BevBranA SET TBLPROPERTIES ('note' = 'A quick look at just the beginning of this date " +
    // "indicated that the branch numbers were repeating in consistent pattern')")
-
+    println("The tables below show my notes added: ")
     spark.sql("SHOW TBLPROPERTIES 2DDAA").show(20)
     spark.sql("SHOW TBLPROPERTIES BevBranA").show(20)
 
 
-
+    println("Here you can see that I have removed SMALL_Coffee from Branch4:")
    // spark.sql("Create table branch4temp like branch4")
 
     //spark.sql("INSERT INTO branch4temp SELECT * FROM branch4 WHERE
@@ -27,7 +27,8 @@ object Scenario5 {
 
     //spark.sql("INSERT OVERWRITE Table branch4 SELECT * from branch4temp")
     //spark.sql("Drop table branch4temp")
-    //spark.sql("SELECT * FROM branch4").show(50)
+
+    spark.sql("SELECT * FROM branch4 ORDER BY nameDrinkBran DESC").show(50)
 
 
   }}
