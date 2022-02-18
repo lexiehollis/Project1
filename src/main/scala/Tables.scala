@@ -26,6 +26,7 @@ object Tables {
      // spark.sql("LOAD DATA LOCAL INPATH 'input/Bev_ConscountC.txt' INTO TABLE consumers")
 
 
+
       //spark.sql("create table BevConsA(nameDrinkCon String, count int) row format delimited fields terminated by ','");
     //spark.sql("LOAD DATA LOCAL INPATH 'input/Bev_ConscountA.txt' INTO TABLE BevConsA")
     //spark.sql("create table BevConsB(nameDrinkCon String, count int) row format delimited fields terminated by ','");
