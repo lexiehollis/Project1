@@ -6,14 +6,37 @@ object Scenario6 {
 
 
 
-    spark.sql("Create table MilkAdd (Drink string, drinkssold int, animal string, plant string) row format delimited fields terminated by ','");
-    spark.sql("INSERT INTO MilkAdd")
+    //spark.sql("SELECT * FROM AorP WHERE if both full delete animal
+  //spark.sql("SELECT * FROM AorP").show(5000)
+   //spark.sql("CREATE Table AorP (AMilk string, PMilk string) row format delimited fields terminated by ','")
+   // spark.sql("LOAD DATA LOCAL INPATH 'input/MILK.csv' INTO TABLE AorP")
+
+    // spark.sql("SELECT * FROM MilkDrinks").show(5000)
+
+    //spark.sql("Select count(count) FROM MilkDrinks").show()
+
+
+
+    //spark.sql("Create Table MilkDrinks (drink String, count int) row format delimited fields terminated by ','");
+
+   //completed inserts 8:30PM
+    //spark.sql("INSERT INTO MilkDrinks SELECT nameDrinkCon, count FROM consumers WHERE nameDrinkCon LIKE '%capp%'")
+   // spark.sql("INSERT INTO MilkDrinks SELECT nameDrinkCon, count FROM consumers WHERE nameDrinkCon LIKE '%LATTE%'")
+    //spark.sql("INSERT INTO MilkDrinks SELECT nameDrinkCon, count FROM consumers WHERE nameDrinkCon LIKE '%MOCHA%'")
+
+    // spark.sql("SELECT nameDrinkCon, count FROM consumers WHERE nameDrinkCon LIKE '%capp%'").show(1000)
+    //spark.sql("SELECT nameDrinkCon, count FROM consumers WHERE nameDrinkCon LIKE '%LATTE%'").show()
+   //spark.sql("SELECT nameDrinkCon, count FROM consumers WHERE nameDrinkCon LIKE '%MOCHA%'").show(1000)
+
+
+    //spark.sql("Create table MilkAdd (Drink string, drinkssold int, animal string, plant string) row format delimited fields terminated by ','");
+    //spark.sql("INSERT INTO MilkAdd")
 
    // Spark.sql("INSERT INTO MildSELECT * FROM branches WHERE nameDrinkBran LIKE '%capp%', '%LATTE%', '%MOCHA%'")
 
     //spark.sql("INSERT INTO MilkAdd  nameDrinkCon FROM consumers WHERE nameDrinkCon INCLUDES??
 
-    // all of the drinks that i think have milk; have to distinguihs by name??
+
 
     //capp, latte, mocha, lite???(lowball data? any additional milkadd drinks can be informative; conservative approcah))
 
