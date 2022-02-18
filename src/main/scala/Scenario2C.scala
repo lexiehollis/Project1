@@ -1,57 +1,31 @@
+
 import org.apache.spark.sql.SparkSession
 
 object Scenario2C {
 
   def scenario2c(spark: SparkSession): Unit = {
 
+    println("Here I took the median rather than the average consumed drink. Six drinks had the same consumption amount " +
+      "at the median, so they are all listed here.")
 
-    println("PRINT the average consumed beverage of Branch2 is ")
+    //spark.sql("Drop table branch2totalZZ")
 
-spark.sql("SELECT * FROM averageBranch2Total").show()
-    //spark.sql("Create table averageBranch2Total (count int, nameDrinkBran String)row format delimited fields terminated by ','")
-   //spark.sql("INSERT INTO averageBranch2Total SELECT averageBranch2A.count, averageBranch2A.nameDrinkBran " +
-    // "FROM averageBranch2A JOIN averageBranch2B ON" +
-     //" (averageBranch2A.nameDrinkBran=averageBranch2B.nameDrinkBran) ")
-
-    //spark.sql("Create table averageBranch2A (count int, nameDrinkBran String) row format delimited fields terminated by ','")
-    //spark.sql("Create table averageBranch2B (count int, nameDrinkBran String) row format delimited fields terminated by ','")
-
-    //spark.sql("Select * FROM averageBranch2B").show()
-
-  //spark.sql("INSERT INTO averageBranch2A SELECT SUM(count), nameDrinkBran FROM " +
-  //"(SELECT DISTINCT nameDrinkBran, count FROM BevBranA LEFT JOIN consumers ON " +
-    // "(nameDrinkBran=nameDrinkCon) WHERE branchNum='Branch2' ORDER BY nameDrinkBran ASC) " +
-     //"GROUP BY nameDrinkBran")
-
-    //spark.sql("INSERT INTO averageBranch2B SELECT SUM(count), nameDrinkBran FROM " +
-      //"(SELECT DISTINCT nameDrinkBran, count FROM BevBranC LEFT JOIN consumers ON " +
-      //"(nameDrinkBran=nameDrinkCon) WHERE branchNum='Branch2' ORDER BY nameDrinkBran ASC) " +
-      //"GROUP BY nameDrinkBran ")
+    //Here I selected from the new table and ordered the rows by consumed drinks in descending order and took the highest one,
+    //which would be the median rather than the average
+    spark.sql("Select * FROM B2rows ORDER BY count DESC LIMIT 10").show(6)
 
 
-   // spark.sql("SELECT SUM(count), nameDrinkBran FROM " +
-    //  "(SELECT DISTINCT nameDrinkBran, count FROM BevBranA LEFT JOIN consumers ON " +
-     // "(nameDrinkBran=nameDrinkCon) WHERE branchNum='Branch2' ORDER BY nameDrinkBran ASC) " +
-    //  "GROUP BY nameDrinkBran").show(100)
-
-    //spark.sql("SELECT SUM(count), nameDrinkBran FROM " +
-     // "(SELECT DISTINCT nameDrinkBran, count FROM BevBranC LEFT JOIN consumers ON " +
-     // "(nameDrinkBran=nameDrinkCon) WHERE branchNum='Branch2' ORDER BY nameDrinkBran ASC) " +
-      //"GROUP BY nameDrinkBran").show(100)
+    //Here I created a new table where I limited the return of rows to the top half +1 of rows.
+    //spark.sql("Create table B2rows(nameDrinkBran String, count int) row format delimited fields terminated by ','")
+    //spark.sql("INSERT INTO B2rows SELECT nameDrinkBran, count FROM B2Total ORDER BY count ASC LIMIT 4807")
 
 
+    //Here I got the total count of rows:
+    //spark.sql("SELECT count(count) FROM B2Total").show()
 
-    //spark.sql("Create table branch2total (nameDrinkBran String, branchNum String, nameDrinkCon String, count int) row format delimited fields terminated by ','")
-   //spark.sql("INSERT INTO branch2total SELECT * FROM branches JOIN consumers ON (branches.nameDrinkBran=consumers.nameDrinkCon) WHERE branchNum='Branch2'").show()
-
-   // spark.sql ("SELECT * FROM branches JOIN consumers ON (branches.nameDrinkBran=consumers.nameDrinkCon) WHERE branchNum='Branch2'").show()
-
-    //spark.sql("SELECT nameDrinkBran, count from Branch2DrTotalAA ORDER BY count ASC LIMIT 1").show(54)
- // spark.sql("SELECT nameDrinkBran, count from Branch2DrTotalAB ORDER BY count ASC LIMIT 1").show(54)
- // spark.sql("SELECT nameDrinkBran, count from Branch2DrTotalAC ORDER BY count ASC LIMIT 1").show(54)
- // spark.sql("SELECT nameDrinkBran, count from Branch2DrTotalCA ORDER BY count ASC LIMIT 1").show(54)
-  // spark.sql("SELECT nameDrinkBran, count from Branch2DrTotalCB ORDER BY count ASC LIMIT 1").show(54)
-  // spark.sql("SELECT nameDrinkBran, count from Branch2DrTotalCC ORDER BY count ASC LIMIT 1").show(54)
-
+    //Here I created a table of all consumed totals for each drink in Branch2
+    //spark.sql("SELECT * FROM B2Total").show()
+    //spark.sql("Create table B2Total (nameDrinkBran String, branchNum String, nameDrinkCon String, count int) row format delimited fields terminated by ','")
+    //spark.sql("INSERT INTO B2Total SELECT * FROM branches JOIN consumers ON (branches.nameDrinkBran=consumers.nameDrinkCon) WHERE branchNum='Branch2' ORDER BY count ASC")
   }
 }

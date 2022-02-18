@@ -7,6 +7,8 @@ object Scenario1A {
 
     println("The total consumers for Branch 1 is: ")
 
+
+
     spark.sql("SELECT Sum(total) AS Branch1totalConsumers from branch1total").show()
 
     //spark.sql("Create table branch1total (Total int) row format delimited fields terminated by ','");
