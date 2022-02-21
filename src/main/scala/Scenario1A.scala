@@ -8,8 +8,13 @@ object Scenario1A {
     println("The total consumers for Branch 1 is: ")
 
 
-
     spark.sql("SELECT Sum(total) AS Branch1totalConsumers from branch1total").show()
+
+
+  }
+}
+
+
 
     //spark.sql("Create table branch1total (Total int) row format delimited fields terminated by ','");
 
@@ -63,7 +68,4 @@ object Scenario1A {
      // "SELECT SUM(result) AS TotalConsumersBranch1CC FROM " +
       //  "(SELECT drinkDistribution4.total/CtDrAppearanceBevA.count AS Result FROM " +
        // "drinkDistribution4 FULL OUTER JOIN CtDrAppearanceBevA ON (nameDrinkBran=nameDrink))").show()
-
-  }
-}
 

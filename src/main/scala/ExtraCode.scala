@@ -28,6 +28,34 @@ object ExtraCode {
   //spark.sql("LOAD DATA LOCAL INPATH 'input/Bev_BranchA.txt' INTO TABLE Milkproducts")
   //spark.sql("LOAD DATA LOCAL INPATH 'input/Bev_BranchB.txt' INTO TABLE Milkproducts")
   //spark.sql("LOAD DATA LOCAL INPATH 'input/Bev_BranchC.txt' INTO TABLE Milkproducts")
+
+
+
+    println("Enter a number below to select a scenario: ")
+    println(
+      "1. Scenario1a")
+    println(
+      "2. Scenario1b")
+    println(
+      "3. Scenario2a")
+    println(
+      "4. Scenario2b")
+    println(
+      "5. Scenario2c")
+    println(
+      "6. Scenario3a")
+    println(
+      "7. Scenario3b")
+    println(
+      "8. Scenario4")
+    println(
+      "9. Scenario5")
+    println(
+      "10 Scenario6")
+    println(
+      "11. Quit"
+    )
+
 }
 
 

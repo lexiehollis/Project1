@@ -11,28 +11,39 @@ object Main {
     .getOrCreate()
 
   System.setProperty("hadoop.home.dir", "C:\\winutils")
-
+  var a =
   println("created spark session")
 
+  println("Enter a number below to select a scenario: ")
+  println(
+    "1. Scenario1a")
+  println(
+    "2. Scenario1b")
+  println(
+    "3. Scenario2a")
+  println(
+    "4. Scenario2b")
+  println(
+    "5. Scenario2c")
+  println(
+    "6. Scenario3a")
+  println(
+    "7. Scenario3b")
+  println(
+    "8. Scenario4")
+  println(
+    "9. Scenario5")
+  println(
+    "10 Scenario6")
+  println(
+    "11. Quit"
+  )
+
+
+  val selection = readInt()
+
+
   def main(args: Array[String]): Unit = {
-
-    //println("Enter a number below to select a scenario." +
-      "1. Scenario1a" +
-      "2. Scenario1b" +
-      "3. Scenario2a" +
-      "4. Scenario2b" +
-      "5. Scenario2c" +
-      "6. Scenario3a" +
-      "7. Scenario3b" +
-      "8. Scenario4" +
-      "9. Scenario5" +
-      "10 Scenario6" +
-      "11. Quit"
-
-    //)
-
-    println("Enter a Number")
-    val selection = readInt()
 
     selection match {
       case 1 => {
@@ -70,7 +81,11 @@ object Main {
       }
 
     }
+
+
+
   }
+
 }
 
 
